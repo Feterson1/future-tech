@@ -2,4 +2,15 @@
 
 .logo {
   max-width: fluid(179, 126);
+
+  &__image {
+    width: rem(50);
+    margin-right: rem(13);
+    will-change: transform;
+    transition: transform 1s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
 }
