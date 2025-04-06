@@ -3,14 +3,20 @@
 .logo {
   max-width: fluid(179, 126);
 
+  @include hover {
+    .logo__image {
+      transform: rotate(360deg);
+    }
+  }
   &__image {
     width: rem(50);
     margin-right: rem(13);
     will-change: transform;
+    transform: rotate(0deg);
     transition: transform 1s;
-
-    &:hover {
-      transform: rotate(360deg);
-    }
   }
 }
+
+// &:hover {
+//   transform: rotate(360deg);
+// }

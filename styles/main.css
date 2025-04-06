@@ -515,14 +515,22 @@ button[aria-label]::before {
 .logo {
   max-width: clamp(7.875rem, 6.8073347107rem + 4.3801652893vw, 11.1875rem);
 }
+@media (any-hover: hover) {
+  .logo:hover .logo__image {
+    transform: rotate(360deg);
+  }
+}
+@media (any-hover: none) {
+  .logo:active .logo__image {
+    transform: rotate(360deg);
+  }
+}
 .logo__image {
   width: 3.125rem;
   margin-right: 0.8125rem;
   will-change: transform;
+  transform: rotate(0deg);
   transition: transform 1s;
-}
-.logo__image:hover {
-  transform: rotate(360deg);
 }
 
 .header {
@@ -1437,8 +1445,10 @@ button[aria-label]::before {
     row-gap: 1.875rem;
   }
 }
-.blog-card__author {
-  grid-area: author;
+@media (width <= 63.99875rem) {
+  .blog-card__author {
+    grid-area: author;
+  }
 }
 .blog-card__body {
   display: grid;
