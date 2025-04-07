@@ -37,6 +37,10 @@
     &-main {
       display: grid;
       row-gap: fluid(50, 24);
+
+      @include tablet {
+        justify-content: start;
+      }
     }
     &-icon {
       width: fluid(80, 50);
@@ -51,17 +55,35 @@
     padding-right: 0;
 
     @include tablet {
-      padding: rem(30) rem(16);
+      padding: rem(30) 0;
     }
   }
   &__grid {
     display: grid;
+
     &--2-cols {
       grid-template-columns: repeat(2, 1fr);
       gap: fluid(30, 10);
 
       @include mobile {
         grid-template-columns: 1fr;
+      }
+    }
+
+    &--2-cols-alt {
+      row-gap: rem(30);
+      column-gap: rem(20);
+
+      @include laptop {
+        row-gap: rem(24);
+        column-gap: rem(16);
+      }
+
+      @include mobile-above {
+        grid-template-columns: auto 1fr;
+      }
+
+      @include mobile {
       }
     }
   }
@@ -71,5 +93,38 @@
     flex-direction: column;
     justify-content: start;
     row-gap: fluid(20, 4);
+
+    &:has(> *:only-child) {
+      justify-content: center;
+    }
+    &:has(.card__cell-link) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 'other link' 'other link';
+      align-items: center;
+      column-gap: rem(20);
+    }
+
+    &--wide {
+      grid-column: -1 / 1;
+    }
+
+    &-image {
+      width: 100%;
+      height: fluid(332, 169);
+      object-fit: cover;
+      border-radius: rem(12);
+
+      @include laptop {
+        border-radius: rem(10);
+      }
+    }
+    &-link {
+      grid-area: link;
+    }
+    &-subtitle {
+      font-size: inherit;
+      color: inherit;
+    }
   }
 }
