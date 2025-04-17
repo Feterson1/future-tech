@@ -7,6 +7,11 @@
   background-color: var(--color-dark);
   border-radius: rem(100);
   border: var(--border);
+  @include hover {
+    .rating-view__star {
+      transform: rotate(360deg) scale(-1.2);
+    }
+  }
 
   @include laptop {
     column-gap: rem(4);
@@ -15,6 +20,7 @@
 
   &__star {
     --size: #{rem(24)};
+    transition: transform 0.9s;
 
     @include square(var(--size));
     background: url(../../icons/star-gray.svg) center/contain no-repeat;
