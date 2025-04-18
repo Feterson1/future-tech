@@ -1,0 +1,74 @@
+@use '../helpers' as *;
+
+.video-player {
+  position: relative;
+
+  &__video {
+    width: 100%;
+    height: fluid(412, 210);
+    object-fit: cover;
+    border-radius: rem(12);
+
+    @include laptop {
+      border-radius: rem(10);
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    column-gap: 1rem;
+    padding: rem(30);
+
+    transition-duration: var(--transition-duration);
+
+    &:not(.is-active) {
+      @include hide;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0) 44.27%,
+        #141414 100%
+      );
+    }
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__play-button {
+    --size: rem(70);
+
+    @include square(var(--size));
+
+    @include flex-center;
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    color: var(---color-light);
+
+    @include laptop {
+      --size: rem(50);
+    }
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__duration {
+    color: var(--color-gray-50);
+  }
+}

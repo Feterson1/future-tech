@@ -36,4 +36,8 @@
   &__subtitle {
     justify-self: start;
   }
+
+  &__link {
+    max-width: rem(360);
+  }
 }
