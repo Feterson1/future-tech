@@ -30,4 +30,9 @@
       background-image: url(../../icons/yellow-eye.svg);
     }
   }
+  &--gray-arrow-down {
+    &::after {
+      background-image: url(../../icons/gray-arrow-down.svg);
+    }
+  }
 }
