@@ -4,15 +4,15 @@
   --initialMaxHeight: #{rem(500)};
   position: relative;
   overflow-y: hidden;
+
   &.is-expanded {
     &:before,
     .expandable-content__button {
       @include hide;
     }
-
-    &:not(.is-expanded) {
-      max-height: var(--initialMaxHeight);
-    }
+  }
+  &:not(.is-expanded) {
+    max-height: var(--initialMaxHeight);
   }
   &::before {
     content: '';

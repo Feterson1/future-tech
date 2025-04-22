@@ -2201,7 +2201,7 @@ button[aria-label]::before {
   opacity: 0;
   visibility: hidden;
 }
-.expandable-content.is-expanded:not(.is-expanded) {
+.expandable-content:not(.is-expanded) {
   max-height: var(--initialMaxHeight);
 }
 .expandable-content::before {
